@@ -10,12 +10,16 @@ public class Copy {
             s1.marks[1]=90;
             s1.marks[2]=80;
 
-            Stu s2=new Stu(s1);
+            Stu s2=new Stu(s1);// copy cons called
             s2.pass="hihi";
-            s2.marks[2]=10; 
-            System.out.println(s2.pass);
+            s2.marks[2]=100000; 
+           
             for(int i=0;i<3;i++){
                 System.out.println(s2.marks[i]);
+                
+}
+for(int i=0;i<3;i++){
+    System.out.println(s1.marks[i]);
 }
     }
 }
@@ -26,14 +30,29 @@ class Stu{
     String pass;
     int marks[];
 
-    //copy constuctor 
+    // shallow copy constuctor 
+// Stu(Stu s1){
+// this.name=s1.name;
+// this.roll=s1.roll;
+// this.pass=s1.pass;
+// this.marks=s1.marks;
+
+// }
+
+// deep copy construc.
 Stu(Stu s1){
+  marks=new int[s1.marks.length];
 this.name=s1.name;
-this.roll=s1.roll;
 this.pass=s1.pass;
-this.marks=s1.marks;
+this.roll=s1.roll;
+ 
+//but for marks we will create a whole brand new array::
+        for(int i=0;i<s1.marks.length;i++){
+            this.marks[i]=s1.marks[i];
+        }
 
 }
+
     Stu(){
       marks=new int[3];
         System.out.println("constuctor called");
