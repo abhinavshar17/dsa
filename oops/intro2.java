@@ -1,13 +1,13 @@
 package oops;
 
-public class oops2 {
+public class intro2 {
     public static void main(String[] args) {
         Bankdetails b1 = new Bankdetails();
         b1.username = "Abhinav";
         b1.setPass("abhi752005"); // Now setting the password correctly
         System.out.println("Password: " + b1.getpass());
 
-        student s1 = new student();
+        Student s1 = new Student();
         s1.setmarks(88);
         s1.setname("Abhinav");
         System.out.println("Marks: " + s1.getmarks());
@@ -30,9 +30,10 @@ class Bankdetails {
     }
 }
 
-class student {
+class Student {
     private String name;
     private int marks;
+
 
     // Getters
     public String getname() { // Changed to public

@@ -1,6 +1,6 @@
 package oops;
 
-public class oops1 {
+public class intro1 {
 
     public static void main(String[] args) {
         Pen p1=new Pen();  //constructor
