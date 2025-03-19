@@ -91,13 +91,28 @@ public int removelast(){
     }
     // prev :i=size-2;
     Node prev=head; 
-    for(int i=0;i<size-2;i++){
+    for(int i=0;i<=size-2;i++){ 
 prev=prev.next;
     }
     int val=tail.data;
     prev.next=null;
     tail=prev.next;
     return val;
+}
+
+// search 
+
+public int Isearch(int key){
+    Node temp=head;
+    int i=0;
+    while(temp!= null){
+        if(temp.data==key){
+            return i;
+        }
+        temp=temp.next;
+        i++;
+    }
+return -1;
 }
 //printing:
 public void Print(){
@@ -134,5 +149,7 @@ public void Print(){
         l1.Print();
         l1.removelast();
         l1.Print();
+        System.out.println(l1.Isearch(2));
+        System.out.println(l1.Isearch(7));
     }
 }
