@@ -60,7 +60,7 @@ public void addmid(int index,int data){
     temp.next=newNode;
 }
 
-//remove:
+//remove from first:
 public int removef(){
     if(size==0){ // size is zero 
         System.out.println("ll is empty");
@@ -78,6 +78,27 @@ public int removef(){
     return val;
 }
 
+// remove from the last 
+public int removelast(){
+    if(size==0){
+        System.out.println("ll is empty");
+        return Integer.MIN_VALUE;
+    }
+    else if(size==1){
+        int val=head.data;
+        head=tail=null;
+        return val;
+    }
+    // prev :i=size-2;
+    Node prev=head; 
+    for(int i=0;i<size-2;i++){
+prev=prev.next;
+    }
+    int val=tail.data;
+    prev.next=null;
+    tail=prev.next;
+    return val;
+}
 //printing:
 public void Print(){
     if(head==null){
@@ -110,6 +131,8 @@ public void Print(){
         System.out.println(l1.size);
 
         l1.removef();
+        l1.Print();
+        l1.removelast();
         l1.Print();
     }
 }
