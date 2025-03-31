@@ -1,11 +1,12 @@
-public class LinkedList {
+package Linkedlist;
+public class Linkedlist {
     static class Node {
         int data;
         Node next;
 
         Node(int data) {
             this.data = data;
-            this.next = null;
+            this.next = null ;
         }
     }
 
@@ -69,7 +70,7 @@ public class LinkedList {
     }
 
     public static void main(String[] args) {
-        LinkedList list = new LinkedList();
+        Linkedlist list = new Linkedlist();
         list.insertAtEnd(10);
         list.insertAtBeginning(5);
         list.insertAtEnd(20);

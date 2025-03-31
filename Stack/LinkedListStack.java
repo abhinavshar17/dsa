@@ -1,10 +1,8 @@
 package Stack;
 
-// Stack implementation using Linked List
 class LinkedListStack {
-    private Node top; // Top of the stack
+    private Node top; 
 
-    // Node class for linked list
     private static class Node {
         int data;
         Node next;
@@ -13,33 +11,21 @@ class LinkedListStack {
             this.next = null;
         }
     }
-
-    // Push method to add element to stack
     public void push(int data) {
         Node newNode = new Node(data);
         newNode.next = top;
         top = newNode;
     }
 
-    // Pop method to remove and return top element
-    public int pop() {
-        if (isEmpty()) {
-            throw new RuntimeException("Stack is empty");
-        }
-        int poppedData = top.data;
-        top = top.next;
-        return poppedData;
-    }
+    
 
-    // Peek method to return top element without removing it
     public int peek() {
         if (isEmpty()) {
-            throw new RuntimeException("Stack is empty");
+            System.out.println("empty");
         }
         return top.data;
     }
 
-    // Check if stack is empty
     public boolean isEmpty() {
         return top == null;
     }
