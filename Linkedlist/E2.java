@@ -55,6 +55,18 @@ public class E2 {
             }
             return slow;
         }
+        public  void deletefromnth(Node head,int n){
+            Node slow=head;
+            Node fast=head;
+            for(int i=1;i<=n;i++){
+                fast=fast.next;
+            }
+            while(fast.next!=null){
+               slow=slow.next;
+               fast=fast.next; 
+            }
+            slow.next=slow.next.next;
+        }
 
         void display() { // ✅ Added display method
             Node temp = head;
@@ -71,6 +83,8 @@ public class E2 {
 
         myList.insertAtEnd(4);
         myList.insertAtEnd(5);
+        myList.insertAtEnd(7);
+        myList.insertAtEnd(8);
         myList.display(); // 
 
         myList.insertatfirst(3);
@@ -79,5 +93,7 @@ public class E2 {
         myList.display();
         Node result = myList.lastn(myList.head, 2);
         System.out.println("2nd last node is: " + result.data);
+        myList.deletefromnth(myList.head, 2);
+        myList.display();
     }
 }
